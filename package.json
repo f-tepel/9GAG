@@ -1,0 +1,23 @@
+{
+  "name": "9gag",
+  "version": "1.0.0",
+  "description": "Project for web based applications",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "watch": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f-tepel/9GAG.git"
+  },
+  "author": "Felix Tepel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/f-tepel/9GAG/issues"
+  },
+  "homepage": "https://github.com/f-tepel/9GAG#readme",
+  "dependencies": {
+    "nodemon": "^1.18.5"
+  }
+}
