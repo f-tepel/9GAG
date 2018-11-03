@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/f-tepel/9GAG#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "mongodb": "^3.1.8",
     "nodemon": "^1.18.5"
   }
 }

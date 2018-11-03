@@ -9,4 +9,23 @@
 <body>
     Register
 </body>
+<script>
+    window.onload = () => {
+        $.ajax({
+                url: '/user',
+                type: 'POST',
+                data: {
+                    name: 'felix',
+                    email: 'test@asdf.de',
+                    pwd: 'Start123'
+                },
+                success: (res) => {
+                    alert(res + ' added successfully')
+                },
+                error: (err) => {
+                    alert('error: ' + err)
+                }
+            })    
+    }
+</script>
 </html>
