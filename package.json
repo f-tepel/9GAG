@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "node src/app.js",
-    "watch": "nodemon src/app.js"
+    "watch": "nodemon -e .js,.html,.css src/app.js"
   },
   "repository": {
     "type": "git",
