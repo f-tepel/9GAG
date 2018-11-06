@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 8080
 const pages = require('./pages')
 const setters = require('./setters')
 
+app.use(express.static(__dirname + '/public'))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(pages)
