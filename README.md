@@ -6,16 +6,15 @@
 
 ### Register User
 - Post to "/user/register"
-- Body: name, email, pwd
+- Body: name, pwd
 - Beispiel:
 ```
 $.ajax({
     url: '/user/register',
     type: 'POST',
     data: {
-        name: 'Felix',
-        email: 'felix@asdf.de',
-        pwd: 'Start123'
+        name,
+        pwd
     },
     success: (res) => {
         alert(res + ' added successfully')
@@ -28,14 +27,14 @@ $.ajax({
 
 ### Login User:
 - Post to "/user/login"
-- Body: email, pwd
+- Body: name, pwd
 - Beispiel: 
 ```
 $.ajax({
     url: '/user/login',
     type: 'POST',
     data: {
-        email,
+        name,
         pwd
     },
     success: (res) => {
