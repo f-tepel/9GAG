@@ -1,13 +1,15 @@
 const express = require('express')
 const MongoClient = require('mongodb').MongoClient
 const bodyParser = require('body-parser')
+const path = require('path')
+const appRoot = require('app-root-path').toString()
 const app = express()
 const PORT = process.env.PORT || 8080
 
 const pages = require('./pages')
 const setters = require('./setters')
 
-app.use(express.static(__dirname + '/public'))
+app.use('/public', express.static(path.join(appRoot, '/public')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(pages)
