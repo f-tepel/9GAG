@@ -23,4 +23,18 @@ fs.readFile('views/dashboard.html', (err, html) => {
     })
 })
 
+//get Landingpage
+fs.readFile('views/landingpage.html', (err, html) => {
+    router.get('/', (req, res) => {
+        res.send(html.toString())
+    })
+})
+
+//get Landingpage
+fs.readFile('views/profile.html', (err, html) => {
+    router.get('/profile', (req, res) => {
+        res.send(html.toString())
+    })
+})
+
 module.exports = router

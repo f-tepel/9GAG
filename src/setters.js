@@ -7,11 +7,10 @@ router.use(bodyParser.json())
 
 router.post('/user/register', (req, res) => {
     let name = req.body.name
-    let email = req.body.email
     let pwd = req.body.pwd;
 
     (global).User.findOne({
-        email,
+        name,
         pwd
     }, { _id: 1}, (err, docs) => {
         if(docs) {
@@ -19,7 +18,6 @@ router.post('/user/register', (req, res) => {
         } else {
             (global).User.insertOne({
                 name,
-                email,
                 pwd
             })
             res.status(200).send('Added User')
@@ -28,11 +26,11 @@ router.post('/user/register', (req, res) => {
 })
 
 router.post('/user/login', (req, res) => {
-    let email = req.body.email
+    let name = req.body.name
     let pwd = req.body.pwd;
 
     (global).User.findOne({
-        email,
+        name,
         pwd
     }, { _id: 1}, (err, docs) => {
         if(docs) {
