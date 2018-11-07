@@ -1,11 +1,8 @@
-body {
-    /* Create a seperate css file for that   */
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+body{
+margin: 0;
+padding: 0;
+font-family: Calibri;
+background: url(concrete.jpg) no-repeat;
+background-size: cover;
+
 }
