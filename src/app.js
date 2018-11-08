@@ -7,13 +7,15 @@ const app = express()
 const PORT = process.env.PORT || 8080
 
 const pages = require('./pages')
-const setters = require('./setters')
+const login = require('./routes/user/login')
+const register = require('./routes/user/register')
 
 app.use('/public', express.static(path.join(appRoot, '/public')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(pages)
-app.use(setters)
+app.use(login)
+app.use(register)
 
 MongoClient.connect('mongodb://localhost:27017', function (err, client) {
     if(err) {
