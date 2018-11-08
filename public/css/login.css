@@ -4,5 +4,23 @@ body {
     font-family: Calibri;
     background: url(concrete.jpg) no-repeat;
     background-size: cover;
-    background: red;
+    background-color: bisque;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    margin: auto; 
+
+} 
+
+/*Used for centering the login box right in the middle of the screen. 
+Works on most browsers (tested IE and Chrome). */
+.login-box{
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -moz-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+
 }
