@@ -11,13 +11,12 @@
     Register
 </body>
 <script>
-    var register = () => {
+    window.onload = () => {
         $.ajax({
                 url: '/user/register',
                 type: 'POST',
                 data: {
-                    name: 'Ana',
-                    email: 'ana@asdf.de',
+                    name: 'test',
                     pwd: 'Start123'
                 },
                 success: (res) => {

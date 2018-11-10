@@ -37,4 +37,11 @@ fs.readFile('views/profile.html', (err, html) => {
     })
 })
 
+//get actions
+fs.readFile('views/actions.html', (err, html) => {
+    router.get('/actions', (req, res) => {
+        res.send(html.toString())
+    })
+})
+
 module.exports = router

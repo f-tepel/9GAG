@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 router.delete('/user', (req, res) => {
-    let name = req.body.name
+    let name = req.body.name;
 
     (global).User.findOne({
         name

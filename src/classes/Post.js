@@ -1,20 +1,12 @@
-export class Post {
-    _id
-    userId
-    caption
-    description
-    image
-    likes
-    dislikes
-    comments
-
+class Post {
     constructor(userId, caption, description, image){
         this.userId = userId
         this.caption = caption
         this.description = description
         this.image = image
         this.likes = []
-        this.dislikes = []
         this.comments = []
     }
 }
+
+module.exports =  Post
