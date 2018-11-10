@@ -68,7 +68,7 @@ $.ajax({
 })
 ```
 
-#### get profile data from User:
+#### Get profile data from User:
 - POST to "/user/profile"
 - Body: name
 - Beispiel: 
@@ -81,6 +81,50 @@ $.ajax({
     },
     success: (res) => {
         alert(res + ' received profile data successfully')
+    },
+    error: (err) => {
+        alert('error: ' + err)
+    }
+})
+```
+
+### Post 
+
+#### Add post:
+- POST to "/post"
+- Body: name
+- Beispiel: 
+```
+$.ajax({
+    url: '/post',
+    type: 'POST',
+    data: {
+        userId,
+        caption,
+        description
+    },
+    success: (res) => {
+        alert(res + ' added post successfully')
+    },
+    error: (err) => {
+        alert('error: ' + err)
+    }
+})
+```
+
+#### Delete post:
+- DELETE to "/post"
+- Body: name
+- Beispiel: 
+```
+$.ajax({
+    url: '/post',
+    type: 'DELETE',
+    data: {
+        id
+    },
+    success: (res) => {
+        alert(res + ' deleted post successfully')
     },
     error: (err) => {
         alert('error: ' + err)
