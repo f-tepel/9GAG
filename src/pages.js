@@ -44,4 +44,11 @@ fs.readFile('views/actions.html', (err, html) => {
     })
 })
 
+//get upload
+fs.readFile('views/upload.html', (err, html) => {
+    router.get('/upload', (req, res) => {
+        res.send(html.toString())
+    })
+})
+
 module.exports = router

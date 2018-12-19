@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+header {
+    background: black;
+    color: white;
+}
+header .container {
+    height: 3em;
+    align-items: center;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+header nav .item {
+    margin-left: 2em;
+    color: grey;
+}
+header nav .item:hover {
+    color: white;
+    text-decoration: none;
+}
