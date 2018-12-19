@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+}
+header {
+    background: black;
+    color: white;
+}
+header .container {
+    height: 3em;
+    align-items: center;
+}
+header nav {
+    display: flex;
+    justify-content: space-between;
+}
+header nav .item {
+    margin-left: 2em;
+    color: grey;
+}
+header nav .item:hover {
+    color: white;
+    text-decoration: none;
+}
+
+main .left {
+    width: 30%;
+}
+main .left .container {
+    padding: 1em;
+    display: initial;
+}
+main .left h3 {
+    color: grey;
+    font-size: 0.7em;
+}
+main .left .item {
+    display: flex;
+    align-items: center;
+    padding: 0.5em;
+}
+main .left .item:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+main .left .item img {
+    height: 1.5em;
+}
+main .left .item span {
+    margin-left: 0.5em;
+}
+main .right {
+    width: 70%;
+}
+main .right .container {
+    padding: 1em;
+    display: initial;
+}
+.post {
+    color: grey;
+}
+.post .head {
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+}
+.post .head span {
+    margin-right: 1em;
+}
+.post .head img {
+    height: 1em;
+}
+.post .title {
+    color: black;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+.post .actions {
+    display: flex;
+}
+.post .actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.5em;
+}
