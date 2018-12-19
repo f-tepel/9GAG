@@ -2,15 +2,20 @@ body {
     margin: 0;
     padding: 0;
     font-family: Calibri;
-    background: url(concrete.jpg) no-repeat;
+    background: url(../images/bg.jpg) no-repeat;
     background-size: cover;
-    background-color: bisque;
 
     }
+
+    h1 {
+        color: white;
+        text-align: center;
+      }
 
 /*Used for centering the login box right in the middle of the screen. 
 Works on most browsers (tested IE and Chrome). */
 .login-box{
+
     padding: 280px 0;
     text-align: center;
 
