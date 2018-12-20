@@ -31,6 +31,10 @@ main .right .container {
     padding: 1em;
     display: initial;
 }
+.hidden {
+    visibility: hidden;
+    height: 0;
+}
 .post {
     color: grey;
 }
@@ -49,6 +53,9 @@ main .right .container {
     color: black;
     font-size: 1.5em;
     font-weight: 500;
+}
+.post .content img {
+    max-width: 100%;
 }
 .post .actions {
     display: flex;

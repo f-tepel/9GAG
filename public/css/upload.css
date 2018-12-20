@@ -1,0 +1,10 @@
+.main .card {
+    width: 50%;
+    margin: 5em auto;
+}
+#preview {
+    display: none;
+}
+img {
+    max-width: 100%;
+}

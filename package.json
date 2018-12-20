@@ -21,6 +21,8 @@
     "app-root-path": "^2.1.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "formidable": "^1.2.1",
+    "http": "0.0.0",
     "mongodb": "^3.1.9",
     "nodemon": "^1.18.6"
   }
