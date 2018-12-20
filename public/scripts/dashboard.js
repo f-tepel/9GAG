@@ -9,6 +9,8 @@ fetch('/api/post/all')
         el.classList.remove('hidden')
         let children = el.children[0].children
         console.log(children)
+        children[0].children[1].innerHTML = post.section
+        children[0].children[2].innerHTML = post.date
         children[1].innerHTML= post.caption
         children[2].children[0].src = post.image 
         postsToAppend.push(el)
