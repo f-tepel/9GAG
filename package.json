@@ -19,11 +19,15 @@
   "homepage": "https://github.com/f-tepel/9GAG#readme",
   "dependencies": {
     "app-root-path": "^2.1.0",
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "formidable": "^1.2.1",
     "http": "0.0.0",
+    "jsonwebtoken": "^8.4.0",
+    "lodash": "^4.17.11",
     "mongodb": "^3.1.9",
-    "nodemon": "^1.18.6"
+    "nodemon": "^1.18.6",
+    "validator": "^10.9.0"
   }
 }

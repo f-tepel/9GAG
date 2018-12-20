@@ -7,10 +7,7 @@ const app = express()
 const PORT = process.env.PORT || 8080
 
 const pages = require('./pages')
-const login = require('./routes/user/login')
-const deleteUser = require('./routes/user/delete')
-const register = require('./routes/user/register')
-const profile = require('./routes/user/profile')
+const user = require('./routes/user')
 const post = require('./routes/post')
 
 app.use('/public', express.static(path.join(appRoot, '/public')))
@@ -22,10 +19,7 @@ app.use(bodyParser.json({
     limit: '50mb'
 }))
 app.use(pages)
-app.use(login)
-app.use(register)
-app.use(deleteUser)
-app.use(profile)
+app.use(user)
 app.use(post)
 
 MongoClient.connect('mongodb://localhost:27017', function (err, client) {
