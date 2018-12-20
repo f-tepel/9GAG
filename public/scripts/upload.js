@@ -1,5 +1,6 @@
-let caption;
-let imgBase64;
+let caption
+let imgBase64
+let section
 
 document.getElementById("image").addEventListener("change", readFile);
 
@@ -18,10 +19,13 @@ function readFile() {
 }
 let preview = () => {
     caption = document.getElementById('caption').value
+    section = document.getElementById('section').value
     if(caption == null || caption == '') {
         alert('Please enter a caption')
     } else if (imgBase64 == null) {
         alert('Please upload an image')
+    } else if (section == null) {
+        alert('Please select a section')
     } else {
         document.getElementById('uploadForm').style.display = 'none'
         document.getElementById('preview').style.display = 'block'
@@ -35,7 +39,8 @@ let upload = () => {
         url: '/api/post',
         data: {
             image: imgBase64,
-            caption: caption
+            caption: caption,
+            section: section
         },
         success: (res) => {
             alert('Your post has been added successfully. Thanks!')

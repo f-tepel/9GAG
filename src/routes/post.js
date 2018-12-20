@@ -5,7 +5,8 @@ const ObjectId = require('mongodb').ObjectID
 
 router.post('/api/post', (req, res) => {
     let caption = req.body.caption
-    let post = new Post(ObjectId("5be5753c21aab22434a6fa97"), caption, 'desc', req.body.image);
+    let section = req.body.section
+    let post = new Post(ObjectId("5be5753c21aab22434a6fa97"), section, caption, 'desc', req.body.image);
     (global).Post.insert(post)
     res.status(200).send('Added post successfully')
 })
