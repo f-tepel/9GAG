@@ -1,21 +1,25 @@
-fetch('/api/post/all')
-.then(res => res.json())
-.then((data) => {
-    let sample = document.getElementById('sample')
-    let parent = sample.parentNode
-    let postsToAppend = []
-    data.forEach(post => {
-        let el = sample.cloneNode(true)
-        el.classList.remove('hidden')
-        let children = el.children[0].children
-        console.log(children)
-        children[0].children[1].innerHTML = post.section
-        children[0].children[2].innerHTML = post.date
-        children[1].innerHTML= post.caption
-        children[2].children[0].src = post.image 
-        postsToAppend.push(el)
+
+window.onload = () => {
+    fetch('/api/post/all')
+    .then(res => res.json())
+    .then((data) => {
+        console.log(data)
+        let sample = document.getElementById('sample')
+        let parent = sample.parentNode
+        let postsToAppend = []
+        data.forEach(post => {
+            let el = sample.cloneNode(true)
+            el.classList.remove('hidden')
+            let children = el.children[0].children
+            console.log(children)
+            children[0].children[1].innerHTML = post.section
+            children[0].children[2].innerHTML = post.date
+            children[1].innerHTML = post.caption
+            children[2].children[0].src = post.image 
+            postsToAppend.push(el)
+        })
+        postsToAppend.forEach(post => {
+            parent.appendChild(post)
+        });
     })
-    postsToAppend.forEach(post => {
-        parent.appendChild(post)
-    });
-})
+}

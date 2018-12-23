@@ -22,8 +22,10 @@
                     email: 'test@asdf.de',
                     password: 'Start1234'
                 },
-                success: (res) => {
-                    console.log('success ' + res);
+                success: (data, textStatus, request) => {
+                    let xAuth = request.getResponseHeader('x-auth');
+                    localStorage.setItem('x-auth', xAuth);
+                    window.location.href = '/dashboard';
                 },
                 error: (err) => {
                     console.log('error: ' + err)
