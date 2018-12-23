@@ -1,22 +1,108 @@
+/*
+.login-box {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 500px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+    padding: 40px;
+  
+}
+
+body{
+background: url(../images/bg.jpg) no-repeat;
+background-size: cover;
+background-repeat: no-repeat;
+}
+*/
+
 body {
     margin: 0;
-    padding: 0;
-    font-family: Calibri;
-    background: url(../images/bg.jpg) no-repeat;
+    padding:0;
+    background-image: url(../images/bg.jpg);
+    -webkit-background-size: cover;
     background-size: cover;
-
-    }
-
-    h1 {
-        color: white;
-        text-align: center;
-      }
-
-/*Used for centering the login box right in the middle of the screen. 
-Works on most browsers (tested IE and Chrome). */
-.login-box{
-
-    padding: 280px 0;
-    text-align: center;
-
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.form-area{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+width: 400px;
+height: 500 px;
+box-sizing: border-box;
+background: rgba(0, 0, 0, 0.6);
+padding: 40px;
+}
+
+/* Colour Headline 3 "Login Form" in white"*/
+h3{
+    margin: 0;
+    padding: 0 0 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Colour the text in form-area "Email & Password" in white"*/
+.form-area p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/*Increase nput field size */
+.form-area input,select{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-area input[type=email],
+.form-area input[type=password]{
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background-color: transparent;
+    outline: none;
+    height: 40px;
+    color: #ffffff;
+    display: 16px;
+}
+/*Option to change the placeholders colour "Enter your email" etc." But I left it grey.*/
+::placeholder{
+    color: rgb(85, 85, 85);
+}
+
+
+/*Customizes the sign-in button */ 
+.form-area input[type=submit]{
+    border: none;
+    height: 40px;
+    outline: none;
+    color: #ffffff;
+    font-size: 15px;
+    background-color: darkred;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+/* When you hover over the sign in button it gets even darker*/
+.form-area input[type=submit]:hover{
+    background-color: rgb(65, 0, 0);
+    color: #ffffff;
+}
+
+/*Change the look of "forgot password"*/
+.form-area a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
