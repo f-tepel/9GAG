@@ -8,22 +8,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-    Register
+    <button onclick="register()">
+        Register
+    </button>
+
 </body>
 <script>
-    window.onload = () => {
+    let register = () => {
         $.ajax({
-                url: '/user/register',
+                url: '/api/user/register',
                 type: 'POST',
                 data: {
-                    name: 'test',
-                    pwd: 'Start123'
+                    email: 'test@asdf.de',
+                    password: 'Start1234'
                 },
                 success: (res) => {
-                    alert(res + ' added successfully')
+                    console.log('success ' + res);
                 },
                 error: (err) => {
-                    alert('error: ' + err)
+                    console.log('error: ' + err)
                 }
             })    
     }

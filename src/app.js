@@ -27,8 +27,8 @@ MongoClient.connect('mongodb://localhost:27017', function (err, client) {
         return console.log('connection failed')
     }
     const db = client.db('9GAG');
-    global.User = db.collection('User');
-    (global).Post = db.collection('Post');
+    global.UserDB = db.collection('UserDB');
+    global.PostDB = db.collection('PostDB');
 })
 
 console.log('Up and running')

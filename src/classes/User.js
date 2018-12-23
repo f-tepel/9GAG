@@ -8,12 +8,12 @@ class User {
 
     constructor(name, pwd) {
         this._id =  new ObjectId()
-        this.name = name
-        this.pwd = pwd
+        this.email = name
+        this.password = pwd
     }
 
     isUsed(res, callback) {
-        (global).User.findOne(
+        global.UserDB.findOne(
             {email: this.email}, 
             (err, docs) => {
                 if(docs) {
@@ -52,7 +52,7 @@ class User {
         bcrypt.genSalt(10, function(err, salt) {
             bcrypt.hash(user.password, salt, function(err, hash) {
                 user.password = hash;
-                (global).UserDB.insert(user);
+                global.UserDB.insert(user);
                 callback(token);
             });
         });              
@@ -82,7 +82,7 @@ class User {
     }
 
     static findByEmail(email, password, callback) {
-        (global).UserDB.findOne({
+        global.UserDB.findOne({
             email
         },
         (err, user) => {
@@ -107,7 +107,7 @@ class User {
             return callback('token not valid', null)
         }
 
-        (global).UserDB.findOne({
+        global.UserDB.findOne({
             '_id': ObjectId(decoded._id),
             'tokens.token': token,
             'tokens.access': 'auth' 

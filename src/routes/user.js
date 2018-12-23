@@ -1,11 +1,14 @@
 const { login } = require( "../middleware/login");
 const { authenticate } = require( '../middleware/authenticate');
-const express = require('express')
-const router = express.Router()
+const User = require('../classes/User');
+const express = require('express');
+const router = express.Router();
+const bodyParser = require('body-parser');
 
-router.post('/user/register', (req, res) => {
+router.post('/api/user/register', (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
+
     let user = new User(email, password);
     user.isUsed(res, () => {
         if(user.isValid()){
