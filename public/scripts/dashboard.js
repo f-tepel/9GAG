@@ -24,6 +24,9 @@ window.onload = () => {
             children[4].children[1].addEventListener('click', () => {
                 dislike(post._id)
             })
+            children[4].children[2].addEventListener('click', () => {
+                comment(post._id)
+            })
             postsToAppend.push(el)
         })
         postsToAppend.forEach(post => {
@@ -46,4 +49,8 @@ let dislike = (id) => {
         let el = document.getElementById(id).children[0].children[3].children[2]
         el.innerHTML = Number(el.innerHTML) + 1
     })
+}
+
+let comment = (id) => {
+    window.location.href = '/post?id=' + id
 }

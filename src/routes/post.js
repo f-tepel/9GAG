@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Post = require('../classes/Post')
 const Like = require('../classes/Like')
+const Comment = require('../classes/Comment')
 const ObjectId = require('mongodb').ObjectID
 
 router.post('/api/post', (req, res) => {
@@ -34,6 +35,16 @@ router.get('/api/post/all', (req, res) => {
     })
 })
 
+router.get('/api/post/:id', (req, res) => {
+    let id = req.params.id
+    global.PostDB.findOne({
+        _id: ObjectId(id)
+    }, (err, post) => {
+        if(err) return res.status(404).send()
+        return res.send(post)
+    })
+})
+
 router.get('/api/like/:id', (req, res) => {
     let id = req.params.id
     let like = new Like(id, true)
@@ -45,6 +56,14 @@ router.get('/api/dislike/:id', (req, res) => {
     let id = req.params.id
     let like = new Like(id, true)
     like.insertDislike()
+    res.send('success')
+})
+
+router.post('/api/comment', (req, res) => {
+    let postId = req.body.id
+    let text = req.body.text
+    let comment = new Comment(text, postId)
+    comment.insertComment(postId)
     res.send('success')
 })
 

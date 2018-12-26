@@ -51,4 +51,11 @@ fs.readFile('views/upload.html', (err, html) => {
     })
 })
 
+//get post
+fs.readFile('views/post.html', (err, html) => {
+    router.get('/post', (req, res) => {
+        res.send(html.toString())
+    })
+})
+
 module.exports = router

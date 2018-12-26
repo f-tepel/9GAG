@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>9GAG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/dashboard.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/main.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="brand">
+                Random Post
+            </div>
+            <nav>
+                <a href="/dashboard" class="item">
+                    Dashboard
+                </a>
+                <a href="/profile" class="item">
+                    Profile
+                </a>
+                <a href="/upload" class="item">
+                    Upload
+                </a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container d-flex">
+            <section class="left">
+                <div class="container">
+                    <h3>
+                        SECTIONS
+                    </h3>
+                    <div class="item">
+                        <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1481536354.227_YsUzaZ_100x100.jpg" alt="Funny">
+                        <span>Funny</span>
+                    </div>
+                    <div class="item">
+                        <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1481536354.227_YsUzaZ_100x100.jpg" alt="Funny">
+                        <span>Sport</span>
+                    </div>
+                    <div class="item">
+                        <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1481536354.227_YsUzaZ_100x100.jpg" alt="Funny">
+                        <span>Car</span>
+                    </div>
+                    <div class="item">
+                        <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1481536354.227_YsUzaZ_100x100.jpg" alt="Funny">
+                        <span>Awesome</span>
+                    </div>
+                    <div class="item">
+                        <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1481536354.227_YsUzaZ_100x100.jpg" alt="Funny">
+                        <span>Porn</span>
+                    </div>
+                    <div class="item">
+                        <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1481536354.227_YsUzaZ_100x100.jpg" alt="Funny">
+                        <span>other</span>
+                    </div>
+                </div>
+            </section>
+            <section class="right">
+                <div class="container">
+                    <div class="post card hidden" id="sample">
+                        <div class="p-2">
+                            <div class="head">
+                                <span>
+                                    <img src="https://miscmedia-9gag-fun.9cache.com/images/thumbnail-facebook/1481536354.227_YsUzaZ_100x100.jpg" alt="">
+                                </span>
+                                <span>
+                                    Section
+                                </span>
+                                <span>
+                                    1h ago
+                                </span>
+                            </div>
+                            <div class="title">
+                            </div>
+                            <div class="content d-flex">
+                                <img class="p-2" src="" alt="">
+                            </div>
+                            <div class="stats">
+                                <span></span>
+                                <span>
+                                    likes - 
+                                </span>
+                                <span></span>
+                                <span>
+                                    dislikes -
+                                </span>
+                                <span></span>
+                                <span>
+                                    comments
+                                </span>
+                            </div>
+                            <div class="actions">
+                                <button>
+                                    <i class="material-icons">
+                                        arrow_upward
+                                    </i>
+                                </button>
+                                <button>
+                                    <i class="material-icons">
+                                        arrow_downward
+                                    </i>
+                                </button>
+                                <button>
+                                    <i class="material-icons">
+                                            menu
+                                    </i>
+                                </button>
+                            </div>
+                            <div class="comments" id="container">
+                                <textarea id="comment" rows="4" cols="50">Enter your comments here</textarea>
+                                <button onclick="addComment()">Post</button>
+                                <br>
+                                <div class="comment" id="commentSample">
+                                    <strong>fTepel</strong> Lol, this picture is hilarious!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
+
+<script src="../public/scripts/post.js"></script>
