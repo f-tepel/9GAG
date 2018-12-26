@@ -33,6 +33,20 @@ window.onload = () => {
             parent.appendChild(post)
         })
     })
+
+    fetch('/api/section/all')
+    .then(res => res.json())
+    .then((sections) => {
+        var sample = document.getElementById('section-sample')
+        var parent = sample.parentNode
+        sections.forEach(section => {
+            var el = sample.cloneNode(true)
+            el.classList.remove('hidden')
+            el.children[1].innerHTML = section.name
+            parent.appendChild(el)
+        })
+
+    })
 }
 
 let like = (id) => {

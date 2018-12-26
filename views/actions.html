@@ -19,6 +19,7 @@
     <button onclick="comment()">Comment</button>
     <button onclick="like()">Like</button>
     <button onclick="dislike()">Dislike</button>
+    <button onclick="section()">Section</button>
 </body>
 <script>
     var register = () => {
@@ -91,6 +92,21 @@
                 type: 'DELETE',
                 data: {
                     id: '5be579a7072481516ce63fee',
+                },
+                success: (res) => {
+                    alert(res + ' successfully')
+                },
+                error: (err) => {
+                    alert('error: ' + err)
+                }
+            })    
+    }
+    var section = () => {
+        $.ajax({
+                url: '/api/section',
+                type: 'POST',
+                data: {
+                    name: 'Sport',
                 },
                 success: (res) => {
                     alert(res + ' successfully')
