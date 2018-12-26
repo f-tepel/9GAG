@@ -7,6 +7,7 @@ class Post {
         this.description = description
         this.image = image
         this.likes = []
+        this.disLikes = []
         this.comments = []
     }
 }

@@ -3,23 +3,47 @@ window.onload = () => {
     fetch('/api/post/all')
     .then(res => res.json())
     .then((data) => {
-        console.log(data)
         let sample = document.getElementById('sample')
         let parent = sample.parentNode
         let postsToAppend = []
         data.forEach(post => {
             let el = sample.cloneNode(true)
             el.classList.remove('hidden')
+            el.id = post._id
             let children = el.children[0].children
-            console.log(children)
             children[0].children[1].innerHTML = post.section
             children[0].children[2].innerHTML = post.date
             children[1].innerHTML = post.caption
-            children[2].children[0].src = post.image 
+            children[2].children[0].src = post.image
+            children[3].children[0].innerHTML = post.likes.length
+            children[3].children[2].innerHTML = post.dislikes.length
+            children[3].children[4].innerHTML = post.comments.length
+            children[4].children[0].addEventListener('click', () => {
+                like(post._id)
+            })
+            children[4].children[1].addEventListener('click', () => {
+                dislike(post._id)
+            })
             postsToAppend.push(el)
         })
         postsToAppend.forEach(post => {
             parent.appendChild(post)
-        });
+        })
+    })
+}
+
+let like = (id) => {
+    fetch('/api/like/' + id)
+    .then((res) => {
+        let el = document.getElementById(id).children[0].children[3].children[0]
+        el.innerHTML = Number(el.innerHTML) + 1
+    })
+}
+
+let dislike = (id) => {
+    fetch('/api/dislike/' + id)
+    .then((res) => {
+        let el = document.getElementById(id).children[0].children[3].children[2]
+        el.innerHTML = Number(el.innerHTML) + 1
     })
 }

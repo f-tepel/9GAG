@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Post = require('../classes/Post')
+const Like = require('../classes/Like')
 const ObjectId = require('mongodb').ObjectID
 
 router.post('/api/post', (req, res) => {
@@ -29,9 +30,22 @@ router.delete('/api/post', (req, res) => {
 router.get('/api/post/all', (req, res) => {
     global.PostDB.find({}).toArray((err, docs) => {
         if(err) return res.status(404).send(err)
-        console.log(docs)
         return res.send(docs)
     })
+})
+
+router.get('/api/like/:id', (req, res) => {
+    let id = req.params.id
+    let like = new Like(id, true)
+    like.insertLike()
+    res.send('success')
+})
+
+router.get('/api/dislike/:id', (req, res) => {
+    let id = req.params.id
+    let like = new Like(id, true)
+    like.insertDislike()
+    res.send('success')
 })
 
 module.exports = router
