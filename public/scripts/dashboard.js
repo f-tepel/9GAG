@@ -27,7 +27,7 @@ window.onload = () => {
             children[4].children[2].addEventListener('click', () => {
                 comment(post._id)
             })
-            postsToAppend.push(el)
+            postsToAppend.unshift(el)
         })
         postsToAppend.forEach(post => {
             parent.appendChild(post)

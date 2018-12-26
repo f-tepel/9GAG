@@ -39,6 +39,22 @@ window.onload = () => {
     })
 }
 
+let like = (id) => {
+    fetch('/api/like/' + id)
+    .then((res) => {
+        let el = document.getElementById(id).children[0].children[3].children[0]
+        el.innerHTML = Number(el.innerHTML) + 1
+    })
+}
+
+let dislike = (id) => {
+    fetch('/api/dislike/' + id)
+    .then((res) => {
+        let el = document.getElementById(id).children[0].children[3].children[2]
+        el.innerHTML = Number(el.innerHTML) + 1
+    })
+}
+
 let addComment = () => {
     let text = document.getElementById('comment').value
     $.ajax({
