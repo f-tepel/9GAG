@@ -1,4 +1,4 @@
-const { User } = require('../classes/User');
+const User = require('../classes/User');
 const bodyParser = require('body-parser');
 
 let login = (req, res, next) => {

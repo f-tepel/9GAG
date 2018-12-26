@@ -31,15 +31,15 @@ body {
 }
 
 .form-area{
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
-width: 400px;
-height: 500 px;
-box-sizing: border-box;
-background: rgba(0, 0, 0, 0.6);
-padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 500 px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
 }
 
 /* Colour Headline 3 "Login Form" in white"*/
@@ -81,7 +81,7 @@ h3{
 
 
 /*Customizes the sign-in button */ 
-.form-area input[type=submit]{
+.form-area input[type=button]{
     border: none;
     height: 40px;
     outline: none;
@@ -93,7 +93,7 @@ h3{
 }
 
 /* When you hover over the sign in button it gets even darker*/
-.form-area input[type=submit]:hover{
+.form-area input[type=button]:hover{
     background-color: rgb(65, 0, 0);
     color: #ffffff;
 }

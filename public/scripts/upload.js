@@ -42,12 +42,15 @@ let upload = () => {
             caption: caption,
             section: section
         },
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        },
         success: (res) => {
             alert('Your post has been added successfully. Thanks!')
             window.location.pathname = '/dashboard'
         },
         error: (error) => {
-            alert('Upload failed. Please try again or ocntact support.')
+            alert('Upload failed. Please try again or contact support.')
             window.location.pathname = '/upload'
         }
     })

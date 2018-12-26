@@ -1,8 +1,9 @@
-let login = () => {
+let register = () => {
     let email = document.getElementById('email').value
     let password = document.getElementById('password').value
+
     $.ajax({
-        url: '/api/user/login',
+        url: '/api/user/register',
         type: 'POST',
         data: {
             email,

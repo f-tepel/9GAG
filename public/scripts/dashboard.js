@@ -1,6 +1,10 @@
 
 window.onload = () => {
-    fetch('/api/post/all')
+    fetch('/api/post/all', {
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        }
+    })
     .then(res => res.json())
     .then((data) => {
         let sample = document.getElementById('sample')
@@ -33,8 +37,15 @@ window.onload = () => {
             parent.appendChild(post)
         })
     })
+    .catch((error) => {
+        window.location.href = '/login'
+    })
 
-    fetch('/api/section/all')
+    fetch('/api/section/all', {
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        }
+    })
     .then(res => res.json())
     .then((sections) => {
         var sample = document.getElementById('section-sample')
@@ -47,21 +58,38 @@ window.onload = () => {
         })
 
     })
+    .catch((error) => {
+        window.location.href = '/login'
+    })
 }
 
 let like = (id) => {
-    fetch('/api/like/' + id)
+    fetch('/api/like/' + id, {
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        }
+    })
     .then((res) => {
         let el = document.getElementById(id).children[0].children[3].children[0]
         el.innerHTML = Number(el.innerHTML) + 1
     })
+    .catch((error) => {
+        window.location.href = '/login'
+    })
 }
 
 let dislike = (id) => {
-    fetch('/api/dislike/' + id)
+    fetch('/api/dislike/' + id, {
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        }
+    })
     .then((res) => {
         let el = document.getElementById(id).children[0].children[3].children[2]
         el.innerHTML = Number(el.innerHTML) + 1
+    })
+    .catch((error) => {
+        window.location.href = '/login'
     })
 }
 

@@ -1,7 +1,11 @@
 window.onload = () => {
     let url = new URL(window.location.href)
     postId = url.searchParams.get('id')
-    fetch('/api/post/' + postId)
+    fetch('/api/post/' + postId, {
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        }
+    })
     .then(res => res.json())
     .then((post) => {
         let sample = document.getElementById('sample')
@@ -37,21 +41,38 @@ window.onload = () => {
             })
         }
     })
+    .catch((error) => {
+        window.location.href = '/login'
+    })
 }
 
 let like = (id) => {
-    fetch('/api/like/' + id)
+    fetch('/api/like/' + id, {
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        }
+    })
     .then((res) => {
         let el = document.getElementById(id).children[0].children[3].children[0]
         el.innerHTML = Number(el.innerHTML) + 1
     })
+    .catch((error) => {
+        window.location.href = '/login'
+    })
 }
 
 let dislike = (id) => {
-    fetch('/api/dislike/' + id)
+    fetch('/api/dislike/' + id, {
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        }
+    })
     .then((res) => {
         let el = document.getElementById(id).children[0].children[3].children[2]
         el.innerHTML = Number(el.innerHTML) + 1
+    })
+    .catch((error) => {
+        window.location.href = '/login'
     })
 }
 
@@ -64,11 +85,14 @@ let addComment = () => {
             id: postId,
             text: text
         },
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        },
         success: (res) => {
             alert('success')
         },
         error: (res) => {
-            alert('success')
+            window.location.href = '/login'
         }
     })
 }

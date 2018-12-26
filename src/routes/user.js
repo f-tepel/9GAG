@@ -1,5 +1,5 @@
-const { login } = require( "../middleware/login");
-const { authenticate } = require( '../middleware/authenticate');
+const login = require( "../middleware/login");
+const authenticate = require( '../middleware/authenticate');
 const User = require('../classes/User');
 const express = require('express');
 const router = express.Router();
@@ -24,14 +24,14 @@ router.post('/api/user/register', (req, res) => {
     })
 })
 
-router.post('/user/login', (req, res) => {
+router.post('/api/user/login', login, (req, res) => {
     res.status(200).header({
         'x-auth': req.token,
         'Access-Control-Expose-Headers': 'x-auth'
     }).send(User.pick(req.user));
 })
 
-router.post('/user/profile', (req, res) => {
+router.post('/api/user/profile', authenticate, (req, res) => {
     let name = req.body.name;
 
     (global).User.findOne({
