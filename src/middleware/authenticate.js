@@ -2,7 +2,6 @@ const User = require("../classes/User");
 
 let authenticate = (req, res, next) => {
     const token = req.header('x-auth');
-    console.log(token)
     User.findByToken(token, (err, user) => {
         if (err || user === null) {
             return res.status(401).send();

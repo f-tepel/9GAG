@@ -1,5 +1,6 @@
 
 window.onload = () => {
+    getSections();
     fetch('/api/post/all', {
         headers: {
             'x-auth': localStorage.getItem('x-auth')
@@ -36,27 +37,6 @@ window.onload = () => {
         postsToAppend.forEach(post => {
             parent.appendChild(post)
         })
-    })
-    .catch((error) => {
-        window.location.href = '/login'
-    })
-
-    fetch('/api/section/all', {
-        headers: {
-            'x-auth': localStorage.getItem('x-auth')
-        }
-    })
-    .then(res => res.json())
-    .then((sections) => {
-        var sample = document.getElementById('section-sample')
-        var parent = sample.parentNode
-        sections.forEach(section => {
-            var el = sample.cloneNode(true)
-            el.classList.remove('hidden')
-            el.children[1].innerHTML = section.name
-            parent.appendChild(el)
-        })
-
     })
     .catch((error) => {
         window.location.href = '/login'

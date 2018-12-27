@@ -1,9 +1,9 @@
 const ObjectId = require('mongodb').ObjectID
 
 class Like {
-    constructor(userId, like) {
+    constructor(userId, postId) {
         this.userId = userId
-        this.like = like
+        this.postId = postId
     }
 
     insertLike() {

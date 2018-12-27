@@ -1,4 +1,6 @@
 window.onload = () => {
+    getSections()
+
     let url = new URL(window.location.href)
     postId = url.searchParams.get('id')
     fetch('/api/post/' + postId, {
@@ -35,7 +37,7 @@ window.onload = () => {
             let commentSample = document.getElementById('commentSample')
             post.comments.forEach(comment => {
                 let el = commentSample.cloneNode(true)
-                //el.classList.remove('hidden')
+                el.classList.remove('hidden')
                 el.innerHTML = '<strong>' + comment.author + '</strong>: ' + comment.text
                 children[5].appendChild(el)
             })
@@ -89,7 +91,7 @@ let addComment = () => {
             'x-auth': localStorage.getItem('x-auth')
         },
         success: (res) => {
-            alert('success')
+            window.location.reload()
         },
         error: (res) => {
             window.location.href = '/login'

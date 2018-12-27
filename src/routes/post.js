@@ -47,23 +47,26 @@ router.get('/api/post/:id', authenticate, (req, res) => {
 })
 
 router.get('/api/like/:id', authenticate, (req, res) => {
-    let id = req.params.id
-    let like = new Like(id, true)
+    let postId = req.params.id
+    let userId = req.user._id
+    let like = new Like(postId, userId)
     like.insertLike()
     res.send('success')
 })
 
 router.get('/api/dislike/:id', authenticate, (req, res) => {
-    let id = req.params.id
-    let like = new Like(id, true)
+    let postId = req.params.id
+    let userId = req.user._id
+    let like = new Like(postId, userId)
     like.insertDislike()
     res.send('success')
 })
 
 router.post('/api/comment', authenticate, (req, res) => {
     let postId = req.body.id
+    let userId = req.user._id
     let text = req.body.text
-    let comment = new Comment(text, postId)
+    let comment = new Comment(text, userId, req.user.email)
     comment.insertComment(postId)
     res.send('success')
 })
