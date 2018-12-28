@@ -51,7 +51,6 @@ router.get('/api/like/:id', authenticate, (req, res) => {
     let userId = req.user._id
     let like = new Like(postId, userId)
     like.isLiked((liked) => {
-        console.log(liked)
         if(liked) {
             res.send(JSON.stringify({
                 success: false

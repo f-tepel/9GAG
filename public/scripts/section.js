@@ -11,6 +11,7 @@ let getSections = () => {
         sections.forEach(section => {
             var el = sample.cloneNode(true)
             el.classList.remove('hidden')
+            el.href = '/section/' + section._id
             el.children[1].innerHTML = section.name
             parent.appendChild(el)
         })

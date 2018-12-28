@@ -1,6 +1,7 @@
 const login = require( "../middleware/login");
 const authenticate = require( '../middleware/authenticate');
 const User = require('../classes/User');
+const Post = require('../classes/Post');
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
@@ -69,6 +70,41 @@ router.delete('/user', (req, res) => {
             _id: docs._id
         })
         res.status(200).send('user deleted successfully')
+    })
+})
+
+router.get('/api/user/logout', authenticate, (req, res) => {
+    global.UserDB.update({
+        email: req.user.email
+    },
+    {
+        $unset: {
+            tokens: []
+        }
+    })
+    res.send()
+})
+
+router.get('/api/user/profile', authenticate, (req, res) => {
+    Post.getPostByUser(req.user, (user, post) => {
+        res.send({
+            user,
+            post
+        })
+    })
+})
+
+router.post('/api/user/password', authenticate, (req, res) => {
+    let user = req.user
+    let oldPassword = req.body.oldPassword
+    let newPassword = req.body.newPassword
+    User.findByEmail(user.email, oldPassword, (user) => {
+        if(user) {
+            User.setPassword(user._id, newPassword)
+            res.send()
+        } else {
+            res.status(401).send()
+        }
     })
 })
 

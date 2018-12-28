@@ -4,6 +4,9 @@
     width: 90%;
     margin: auto;
 }
+.w-40 {
+    width: 48%;
+}
 header {
     background: black;
     color: white;

@@ -41,9 +41,19 @@ class User {
         this.email =  email
     }
 
-    setPassword(password) {
-        // please hash before
-        this.password = password
+    static setPassword(id, password) {
+        bcrypt.genSalt(10, function(err, salt) {
+            bcrypt.hash(password, salt, function(err, hash) {
+                global.UserDB.update({
+                    _id: id
+                },
+                {
+                    $set: {
+                        password: hash
+                    }
+                })
+            })
+        })       
     }
 
     saveUser(callback) {

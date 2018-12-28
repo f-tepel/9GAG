@@ -10,6 +10,14 @@ class Post {
         this.dislikes = []
         this.comments = []
     }
+
+    static getPostByUser(user, callback) {
+        global.PostDB.find({
+            userId: user._id
+        }).toArray((err, post) => {
+            callback(user, post)
+        })
+    }
 }
 
 module.exports =  Post
