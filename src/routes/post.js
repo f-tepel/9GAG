@@ -9,7 +9,7 @@ const ObjectId = require('mongodb').ObjectID
 router.post('/api/post', authenticate, (req, res) => {
     let caption = req.body.caption
     let section = req.body.section
-    let post = new Post(ObjectId("5be5753c21aab22434a6fa97"), section, caption, 'desc', req.body.image);
+    let post = new Post(req.user._id, section, caption, 'desc', req.body.image);
     global.PostDB.insert(post)
     res.status(200).send('Added post successfully')
 })
@@ -50,16 +50,45 @@ router.get('/api/like/:id', authenticate, (req, res) => {
     let postId = req.params.id
     let userId = req.user._id
     let like = new Like(postId, userId)
-    like.insertLike()
-    res.send('success')
+    like.isLiked((liked) => {
+        console.log(liked)
+        if(liked) {
+            res.send(JSON.stringify({
+                success: false
+            }))
+        } else {
+            like.isDisliked((liked) => {
+                if(liked) like.removeDislike()
+                like.insertLike()
+                res.send(JSON.stringify({
+                    success: true,
+                    removed: liked
+                }))
+            })
+        }
+    })
 })
 
 router.get('/api/dislike/:id', authenticate, (req, res) => {
     let postId = req.params.id
     let userId = req.user._id
     let like = new Like(postId, userId)
-    like.insertDislike()
-    res.send('success')
+    like.isDisliked((liked) => {
+        if(liked) {
+            res.send(JSON.stringify({
+                success: false
+            }))
+        } else {
+            like.isLiked((liked) => {
+                if(liked) like.removeLike()
+                like.insertDislike()
+                res.send(JSON.stringify({
+                    success: true,
+                    removed: liked
+                }))
+            })
+        }
+    })
 })
 
 router.post('/api/comment', authenticate, (req, res) => {

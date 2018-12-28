@@ -4,6 +4,10 @@ let section
 
 document.getElementById("image").addEventListener("change", readFile);
 
+window.onload = () => {
+    getSections()
+}
+
 function readFile() {
     if (this.files && this.files[0]) {
         
@@ -53,5 +57,23 @@ let upload = () => {
             alert('Upload failed. Please try again or contact support.')
             window.location.pathname = '/upload'
         }
+    })
+}
+
+let getSections = () => {
+    fetch('/api/section/all', {
+        headers: {
+            'x-auth': localStorage.getItem('x-auth')
+        }
+    })
+    .then(res => res.json())
+    .then((sections) => {
+        let select = document.getElementById('section')
+        sections.forEach(section => {
+            let option = document.createElement('OPTION')
+            option.value = section.name
+            option.innerHTML = section.name
+            select.appendChild(option)
+        })
     })
 }
