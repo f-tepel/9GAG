@@ -58,14 +58,15 @@ h3{
     color: #ffffff;
 }
 
-/*Increase nput field size */
+/*Increase input field size */
 .form-area input,select{
     margin-bottom: 20px;
     width: 100%;
 }
 
-.form-area input[type=email],
-.form-area input[type=password]{
+/*.form-area input[type=username], */
+/*.form-area input[type=email],*/
+.form-area input/*[type=password]*/{
     border: none;
     border-bottom: 1px solid #ffffff;
     background-color: transparent;
@@ -73,12 +74,14 @@ h3{
     height: 40px;
     color: #ffffff;
     display: 16px;
+    font-size: 14px;
+  
 }
+
 /*Option to change the placeholders colour "Enter your email" etc." But I left it grey.*/
 ::placeholder{
     color: rgb(85, 85, 85);
 }
-
 
 /*Customizes the sign-in button */ 
 .form-area input[type=button]{
