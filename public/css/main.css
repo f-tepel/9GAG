@@ -1,15 +1,30 @@
 .container {
     display: flex;
-    justify-content: space-between;
     width: 90%;
     margin: auto;
+    justify-content: space-between;
 }
+
+body {
+    margin: 0;
+    padding:0;
+    background-image: url(../images/concretewall.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .w-40 {
     width: 48%;
 }
 header {
-    background: black;
+    background-image: url(../images/wood.jpg);
+    background-size: cover;
     color: white;
+   /* border: solid 2px #3f3f3f; */
+   box-shadow: 0px 11px 10px 1px
+   rgba(0,0,0,0.5);
+   margin-bottom: 10px;
 }
 header .container {
     height: 3em;
@@ -21,9 +36,27 @@ header nav {
 }
 header nav .item {
     margin-left: 2em;
-    color: grey;
+    color: white;
 }
 header nav .item:hover {
-    color: white;
+    color: black;
     text-decoration: none;
 }
+
+button{
+    margin-left: 10px;
+    margin-right: 10 px;
+    color: #ffffff;
+    background-color: darkred;;
+    
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 2px 10px;
+}
+
+button:hover{
+    background-color: rgb(65, 0, 0);
+}
+
