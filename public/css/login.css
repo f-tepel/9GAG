@@ -78,7 +78,7 @@ h3{
   
 }
 
-/*Option to change the placeholders colour "Enter your email" etc." But I left it grey.*/
+/*Option to change the placeholders color "Enter your email" etc." But I left it grey.*/
 ::placeholder{
     color: rgb(85, 85, 85);
 }
