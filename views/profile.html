@@ -4,7 +4,7 @@
         <title>9GAG</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" media="screen" href="../public/css/dashboard.css" />
-        <link rel="stylesheet" type="text/css" media="screen" href="../public/css/main.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="../public/css/main.css" />    
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     </head>
@@ -12,7 +12,7 @@
         <header>
             <div class="container">
                 <div class="brand">
-                    Random Post
+                    Random Posts
                 </div>
                 <nav>
                     <a href="/dashboard" class="item">
@@ -25,13 +25,13 @@
                         Upload
                     </a>
                     <button onclick="logout()">
-                        logout
+                        Log out
                     </button>
                 </nav>
             </div>
         </header>
         <div class="main">
-            <div class="container d-block">
+            <div class="userdata">
                 <strong>Username:</strong>&nbsp;<span id="username"></span>
                 <br>
                 <strong>Number of posts:</strong>&nbsp;<span id="postAmount"></span>
@@ -44,15 +44,19 @@
                 <label for="newPassword">New Password:</label>
                 <input type="password" name="newPassword" id="newPassword">
                 <br>
-                <label for="repeatPassword">Repeat new Password:</label>
+                <label for="repeatPassword">Repeat Password:</label>
                 <input type="password" name="repeatPassword" id="repeatPassword">
                 <br>
                 <button onclick="changePassword()">Change password</button>
                 <br><br><br>
-                <h2>Posts</h2>
             </div>
-            <div class="container flex-wrap justify-content-between">
-                <div class="post card hidden w-40 mt-5" id="sample">
+                    </form>
+                </div>
+
+            <h2 class= "Posts">Posts</h2>
+            <!--<div class="container flex-wrap justify-content-between">-->
+            <div class="posts2">
+               <div class="post card hidden w-40 mt-5" id="sample">
                     <div class="p-2">
                         <div class="head">
                             <span>
