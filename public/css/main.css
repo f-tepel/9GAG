@@ -56,7 +56,7 @@ button:hover{
     background-color: rgb(65, 0, 0);
 }
 
-.main{
+.userdata{
     text-align: left;
     color: white;
     background-color: rgba(223, 190, 130, 0.7);
@@ -90,7 +90,8 @@ button:hover{
     justify-content: center;
 }
 
-.main input{
+/* Soll das Eingabefeld unter Profile verändern aber bezieht sich auf alle Seiten... auskommentiert lassen.*/
+/*.main input{
     border: none;
     border-bottom: 1px solid #ffffff;
     background-color: transparent;
@@ -99,7 +100,7 @@ button:hover{
     color: #ffffff;
     display: 16px;
     font-size: 14px;
-}
+}*/
 
 .main button{
     margin-top: 20px;
