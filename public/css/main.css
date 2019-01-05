@@ -55,3 +55,52 @@ button{
 button:hover{
     background-color: rgb(65, 0, 0);
 }
+
+.main{
+    text-align: left;
+    color: white;
+    background-color: rgba(223, 190, 130, 0.7);
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 10px;
+}
+
+
+
+.posts{
+    text-align: center;
+    color: white;
+    background-color: rgba(0,0,0,0.4);
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;   
+}
+
+
+.p-2{
+    color: black;
+    justify-content: center;
+}
+
+.main input{
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background-color: transparent;
+    outline: none;
+    height: 20px;
+    color: #ffffff;
+    display: 16px;
+    font-size: 14px;
+}
+
+.main button{
+    margin-top: 20px;
+}
