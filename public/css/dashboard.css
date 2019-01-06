@@ -25,7 +25,7 @@ main .left .item span {
     margin-left: 0.5em;
 }
 main .right {
-    width: 70%;
+	
 }
 main .right .container {
     padding: 1em;
@@ -45,9 +45,11 @@ main .right .container {
 }
 .post .head span {
     margin-right: 1em;
+	
 }
 .post .head img {
     height: 1em;
+	justify-content: center;
 }
 .post .title {
     color: black;
