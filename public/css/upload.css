@@ -1,6 +1,7 @@
 .main .card {
-    width: 50%;
+    width: 30%;
     margin: 5em auto;
+	background-color: #fff6;
 }
 #preview {
     display: none;

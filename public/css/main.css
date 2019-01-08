@@ -58,7 +58,8 @@ button:hover{
 .userdata{
     text-align: left;
     color: white;
-    background-color: rgba(223, 190, 130, 0.7);
+    
+	background-color: #fff6;
     width: 50%;
     display: block;
     margin-left: auto;
