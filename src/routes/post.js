@@ -2,7 +2,7 @@ const authenticate = require( '../middleware/authenticate');
 const express = require('express')
 const router = express.Router()
 const Post = require('../classes/Post')
-const Like = require('../classes/Like')
+const Like = require('../classes/Feedback')
 const Comment = require('../classes/Comment')
 const ObjectId = require('mongodb').ObjectID
 
