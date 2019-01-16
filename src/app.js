@@ -26,7 +26,7 @@ app.use(section)
 
 MongoClient.connect('mongodb://production:Start1234@ds145434.mlab.com:45434/heroku_3203nh34', function (err, client) {
     if(err) {
-        return console.log('connnection failed')
+        return console.log('connection failed')
     }
     const db = client.db('9GAG');
     global.UserDB = db.collection('UserDB');
