@@ -18,6 +18,13 @@ fs.readFile('views/register.html', (err, html) => {
 
 //get Dashboard page
 fs.readFile('views/dashboard.html', (err, html) => {
+    router.get('/', (req, res) => {
+        res.send(html.toString())
+    })
+})
+
+//get Dashboard page
+fs.readFile('views/dashboard.html', (err, html) => {
     router.get('/dashboard', (req, res) => {
         res.send(html.toString())
     })
