@@ -1,6 +1,6 @@
-# 9GAG
+# RandomPost
 ## Description
-9GAG project for Web basierte Anwendungssysteme
+RandomPost project for Web basierte Anwendungssysteme
 
 ## Documentation
 
