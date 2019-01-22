@@ -11,7 +11,7 @@ router.get('/api/section/all', authenticate, (req, res) => {
     })
 })
 
-router.post('/api/section/:id', authenticate, (req, res) => {
+router.post('/api/section', authenticate, (req, res) => {
     let section = new Section(req.body.name)
     global.SectionDB.insert(section)
     res.send()
