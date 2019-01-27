@@ -24,11 +24,11 @@ app.use(user)
 app.use(post)
 app.use(section)
 
-MongoClient.connect('mongodb://localhost:27017', function (err, client) {
+MongoClient.connect('mongodb://production:Start1234@ds145434.mlab.com:45434/heroku_3203nh34', function (err, client) {
     if(err) {
         return console.log('connection failed')
     }
-    const db = client.db('9GAG');
+    const db = client.db('heroku_3203nh34');
     global.UserDB = db.collection('UserDB');
     global.PostDB = db.collection('PostDB');
     global.SectionDB = db.collection('SectionDB');

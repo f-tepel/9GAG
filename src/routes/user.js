@@ -8,9 +8,10 @@ const bodyParser = require('body-parser');
 
 router.post('/api/user/register', (req, res) => {
     const email = req.body.email;
+    const name = req.body.username;
     const password = req.body.password;
 
-    let user = new User(email, password);
+    let user = new User(email, name, password);
     user.isUsed(res, () => {
         if(user.isValid()){
             user.saveUser((token) => {

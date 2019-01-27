@@ -94,7 +94,7 @@ router.post('/api/comment', authenticate, (req, res) => {
     let postId = req.body.id
     let userId = req.user._id
     let text = req.body.text
-    let comment = new Comment(text, userId, req.user.email)
+    let comment = new Comment(text, userId, req.user.name)
     comment.insertComment(postId)
     res.send('success')
 })
