@@ -1,5 +1,6 @@
 let register = () => {
     let email = document.getElementById('email').value
+    let username = document.getElementById('username').value
     let password = document.getElementById('password').value
 
     $.ajax({
@@ -7,6 +8,7 @@ let register = () => {
         type: 'POST',
         data: {
             email,
+            username,
             password
         },
         success: (data, textStatus, request) => {
