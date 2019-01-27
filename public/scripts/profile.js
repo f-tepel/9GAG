@@ -2,7 +2,7 @@ window.onload = () => {
     getUser((data) => {
         let user = data.user
         let posts = data.post
-        document.getElementById('username').innerHTML = user.email
+        document.getElementById('username').innerHTML = user.name
         document.getElementById('postAmount').innerHTML = posts.length
 
         let sample = document.getElementById('sample')
@@ -11,10 +11,11 @@ window.onload = () => {
         posts.forEach(post => {
             let el = sample.cloneNode(true)
             el.classList.remove('hidden')
+            const offsetTime = getOffsetTimeToPost(post.date)
             el.id = post._id
             let children = el.children[0].children
             children[0].children[1].innerHTML = post.section
-            children[0].children[2].innerHTML = post.date
+            children[0].children[2].innerHTML = offsetTime
             children[1].innerHTML = post.caption
             children[2].children[0].src = post.image
             children[3].children[0].innerHTML = post.likes.length
@@ -79,5 +80,21 @@ let changePassword = () => {
         })
     } else {
         alert('passwords are not equal')
+    }
+}
+
+let getOffsetTimeToPost = (createdTime) => {
+    const currentTime = new Date()
+    createdTime = new Date(createdTime)
+    let offsetSek = (currentTime.getTime() - createdTime.getTime()) / 1000
+    let offsetMin = offsetSek / 60
+    if ( offsetMin < 1 ) {
+        return ' - just now'
+    } else if ( offsetMin < 60 ) {
+        return ' - ' + parseInt(offsetMin) + ' minutes ago'
+    } else if (offsetMin < 1440) {
+        return ' - ' + parseInt(offsetMin / 60) + ' hours ago'
+    } else {
+        return ' - ' + parseInt(offsetMin / 1440) + ' days ago'
     }
 }
