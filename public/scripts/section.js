@@ -9,6 +9,7 @@ let getSections = () => {
         var sample = document.getElementById('section-sample')
         var parent = sample.parentNode
         sections.forEach(section => {
+            console.log('section>>> ' + section)
             var el = sample.cloneNode(true)
             el.classList.remove('hidden')
             el.href = '/section?name=' + section.name
