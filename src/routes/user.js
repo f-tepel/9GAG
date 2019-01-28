@@ -40,7 +40,6 @@ router.post('/api/user/profile', authenticate, (req, res) => {
         name,
     }, {}, (err, docs) => {
         if(docs) {
-            console.log(docs);
             (global).Post.find({
                 id: docs._id
             }).toArray( (err, posts) => {
