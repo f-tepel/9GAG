@@ -29,8 +29,9 @@ class User {
     isValid() {
         const valEmail = validator.isEmail(this.email)
         const valPwd = (this.password.length > 8)
-
-        if(valEmail && valPwd) return true
+        let name = true
+        if(this.name == undefined || this.name == null || this.name == '') name = false
+        if(valEmail && valPwd && name) return true
         return false
     }
 
