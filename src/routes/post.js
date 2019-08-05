@@ -30,7 +30,7 @@ router.delete('/api/post', authenticate, authenticate, (req, res) => {
 })
 
 router.get('/api/post/all', authenticate, (req, res) => {
-    global.PostDB.find({}).toArray((err, docs) => {
+    global.PostDB.find({}).sort({'date': 1}).toArray((err, docs) => {
         if(err) return res.status(404).send(err)
         return res.send(docs)
     })

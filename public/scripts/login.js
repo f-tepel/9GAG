@@ -14,7 +14,7 @@ let login = () => {
             window.location.href = '/dashboard';
         },
         error: (res) => {
-            alert('error' + res.status + ': ' + res.responseText);
+            alert('Email or password is incorrect. Please try again.')
         }
     })
 }

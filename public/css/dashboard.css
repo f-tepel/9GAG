@@ -1,5 +1,6 @@
 main .left {
     width: 30%;
+    margin-right: 3em;
 }
 main .left .container {
     padding: 1em;
@@ -13,10 +14,13 @@ main .left .item {
     display: flex;
     align-items: center;
     padding: 0.5em;
+    color: white;
 }
 main .left .item:hover {
     background: lightgray;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 main .left .item img {
     height: 1.5em;
@@ -24,9 +28,7 @@ main .left .item img {
 main .left .item span {
     margin-left: 0.5em;
 }
-main .right {
-	
-}
+
 main .right .container {
     padding: 1em;
     display: initial;
@@ -37,6 +39,9 @@ main .right .container {
 }
 .post {
     color: grey;
+    max-width: 50vw;
+    max-height: 50vw;
+    margin-bottom: 20px;
 }
 .post .head {
     font-size: 0.8em;
@@ -56,8 +61,13 @@ main .right .container {
     font-size: 1.5em;
     font-weight: 500;
 }
+.post .content {
+    justify-content: center;
+}
 .post .content img {
-    max-width: 100%;
+    height: auto;
+    max-width: 40vw;
+    max-height: 45vh;
 }
 .post .actions {
     display: flex;
